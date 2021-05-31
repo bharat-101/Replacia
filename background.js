@@ -1,0 +1,1 @@
+chrome.tabs.update({url:'https://google.com'});

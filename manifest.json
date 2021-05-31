@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+    "name": "Replace Google",
+    "version": "1.0",
+    "description": "A simpler way by which you can replace google name with any name/text.",
+    "icons": {
+        "128": "icon128.png",
+        "48": "icon48.png",
+        "16": "icon16.png"
+    },
+    "permissions":["activeTab","tabs","storage"],
+    "background":{
+        "scripts": ["back2.js"],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://*/*"],
+            "all_frames": true,
+            "js": ["content_script.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "chrome_url_overrides":{
+        "newtab": "background.html"
+    },
+    "web_accessible_resources": [
+        "popup.html"
+      ]
+}
